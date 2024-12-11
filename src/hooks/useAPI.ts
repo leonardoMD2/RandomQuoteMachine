@@ -5,7 +5,7 @@ export interface QuoteInterface{
     author:string
 }
 
-export default function useAPI(): QuoteInterface | Function{
+export default function useAPI():{ quote: QuoteInterface | undefined; fetchQuote: () => void }{
 
     const url = "https://quotes-api-self.vercel.app/quote"
     const[quote, setQuote] = useState<QuoteInterface | undefined>(undefined)
